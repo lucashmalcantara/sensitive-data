@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LucasAlcantara.SensitiveData.Obfuscation.Tests.Scenarios.StrategiesTests
+namespace LucasAlcantara.SensitiveData.Obfuscation.Tests.Scenarios.Strategies.Tests
 {
-    public class CreditCardStrategyTests
+    public class EmailObfuscationStrategyTests
     {
         
     }

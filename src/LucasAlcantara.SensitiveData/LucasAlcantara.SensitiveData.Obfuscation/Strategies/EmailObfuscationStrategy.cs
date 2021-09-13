@@ -3,7 +3,7 @@ using System;
 
 namespace LucasAlcantara.SensitiveData.Obfuscation.Strategies
 {
-    public class NoneStrategy : IObfuscateStrategy
+    public class EmailObfuscationStrategy : IObfuscationStrategy
     {
         public string Obfuscate(string value)
         {

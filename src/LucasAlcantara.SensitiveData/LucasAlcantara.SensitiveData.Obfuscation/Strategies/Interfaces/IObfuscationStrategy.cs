@@ -1,6 +1,6 @@
 ﻿namespace LucasAlcantara.SensitiveData.Obfuscation.Strategies.Interfaces
 {
-    public interface IObfuscateStrategy
+    public interface IObfuscationStrategy
     {
         string Obfuscate(string value);
     }

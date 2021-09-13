@@ -3,7 +3,7 @@ using System;
 
 namespace LucasAlcantara.SensitiveData.Obfuscation.Strategies
 {
-    public class PhoneStrategy : IObfuscateStrategy
+    public class NoneObfuscationStrategy : IObfuscationStrategy
     {
         public string Obfuscate(string value)
         {
