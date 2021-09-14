@@ -1,5 +1,5 @@
-﻿using LucasAlcantara.SensitiveData.Obfuscation.Strategies.Interfaces;
-using System;
+﻿using LucasAlcantara.SensitiveData.Obfuscation.Constants;
+using LucasAlcantara.SensitiveData.Obfuscation.Strategies.Interfaces;
 
 namespace LucasAlcantara.SensitiveData.Obfuscation.Strategies
 {
@@ -7,7 +7,16 @@ namespace LucasAlcantara.SensitiveData.Obfuscation.Strategies
     {
         public string Obfuscate(string value)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(value))
+                return value;
+
+            int indexOfAtSign = value.IndexOf("@");
+
+            var ofuscatedValue = 
+                new string(ObfuscationConstants.DefaultCharForStringValues, indexOfAtSign) +
+                value.Substring(indexOfAtSign);
+
+            return ofuscatedValue;
         }
     }
 }
