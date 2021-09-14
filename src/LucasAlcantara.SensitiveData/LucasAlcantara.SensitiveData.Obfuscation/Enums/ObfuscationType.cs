@@ -5,7 +5,7 @@
         None = 0,
         Half = 1,
         Complete = 2,
-        Intercaled = 3, //TODO Pattern: [\D\W] OR 
+        Intercaled = 3,
         Name = 4,
         Email = 5,
         Phone = 6,
