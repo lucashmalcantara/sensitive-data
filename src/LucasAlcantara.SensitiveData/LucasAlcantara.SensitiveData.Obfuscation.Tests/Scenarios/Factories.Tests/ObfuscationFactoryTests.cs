@@ -24,8 +24,11 @@ namespace LucasAlcantara.SensitiveData.Obfuscation.Tests.Scenarios.FactoriesTest
             strategy.Should().BeOfType(expectedInstanceType).And.NotBeNull();
         }
 
-        public static IEnumerable<object[]> ObfuscationTypeInstances =>
-            new List<object[]>
+        public static IEnumerable<object[]> ObfuscationTypeInstances()
+        {
+            const ObfuscationType inexistentObfuscationType = (ObfuscationType)999999999;
+
+            return new List<object[]>
             {
                 new object[] { ObfuscationType.None, typeof(NoneObfuscationStrategy) },
                 new object[] { ObfuscationType.Half, typeof(HalfObfuscationStrategy) },
@@ -35,7 +38,9 @@ namespace LucasAlcantara.SensitiveData.Obfuscation.Tests.Scenarios.FactoriesTest
                 new object[] { ObfuscationType.Email, typeof(EmailObfuscationStrategy) },
                 new object[] { ObfuscationType.Phone, typeof(HalfObfuscationStrategy) },
                 new object[] { ObfuscationType.Address, typeof(IntercaledObfuscationStrategy) },
-                new object[] { ObfuscationType.CreditCard, typeof(CreditCardObfuscationStrategy) }
+                new object[] { ObfuscationType.CreditCard, typeof(CreditCardObfuscationStrategy) },
+                new object[] { inexistentObfuscationType, typeof(CompleteObfuscationStrategy) }
             };
+        }
     }
 }
